@@ -1,0 +1,2 @@
+Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService
+Workstation,LanmanWorkstation,OK,Microsoft Corporation,Microsoft Windows Network,True,True,16,0,False,False,True,False,False
