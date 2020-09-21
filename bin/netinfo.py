@@ -18,14 +18,17 @@ class netinfo:
 		db_netinfo = sqlite3.connect(os.path.join(base_dir, "flussi", "netinfo.db")).cursor()
 
 		netinfo.log(log, "Opened all files and database connected")
-
-		intestation = "Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService"
-		netinfo.init_csv(csv_netinfo,intestation, log)
 		
 		start_time = datetime.now()
 		netinfo.log(log, f"Start time: {start_time}")
 		netinfo.log(log, "Running: netinfo.py")
+		
+		# Init files and database
+		intestation = "Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService"
+		netinfo.init_csv(csv_netinfo, intestation, log)
+		init_db(db_netinfo, intestation, log)
 
+		# Core
 		netinfo.print_all(log, csv_names, csv_netinfo, db_netinfo, debug)
 		netinfo.check_db(db_netinfo, intestation, log)
 
@@ -62,12 +65,11 @@ class netinfo:
 		"""Init the database
 		"""
 		try:
-			netinfo.init_db(db_netinfo, intestation, log)
+			db_netinfo.execute(f'''CREATE TABLE netinfo ({intestation})''')
 		except:
-			db_netinfo.execute("DROP TABLE netinfo")
+			db_netinfo.execute(f'''CREATE TABLE netinfo ({intestation})''')
 			netinfo.init_db(db_netinfo,intestation, log)
 
-		db_netinfo.execute(f'''CREATE TABLE netinfo ({intestation})''')
 		netinfo.log(log, "database now initialized")
 
 	def init_csv(csv_netinfo, intestation, log):
