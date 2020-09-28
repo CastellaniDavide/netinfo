@@ -50,7 +50,7 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
  3. **python3 netinfo.py**
 
 # Changelog
- - [Version_01.01_2020-9-28](#Version_0101_2020-9-28)
+ - [Version_02.01_2020-9-28](#Version_0201_2020-9-28)
  - [Version_01.01_2020-9-21](#Version_0101_2020-9-21)
 
 ## Version_02.01_2020-9-21
@@ -70,5 +70,5 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
 ---
 Made by Castellani Davide 
 If you have any problem please contact me:
- - help@castellanidavide.it
+ - [help@castellanidavide.it](mailto:help@castellanidavide.it)
  - [Issue](https://github.com/CastellaniDavide/netinfo/issues)
