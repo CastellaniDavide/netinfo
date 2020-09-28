@@ -1,2 +1,4 @@
-Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService
-Workstation,LanmanWorkstation,OK,Microsoft Corporation,Microsoft Windows Network,True,True,16,0,False,False,True,False,False
+Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService,Date_local,Date_universal_microsecond
+"Workstation","LanmanWorkstation","OK","Microsoft Corporation","Microsoft Windows Network","True","True","16","0","False","False","True","False","False","2020-09-28 18:18:37.995647","1601302717995647"
+"Workstation","LanmanWorkstation","OK","Microsoft Corporation","Microsoft Windows Network","True","True","16","0","False","False","True","False","False","2020-09-28 18:18:44.493737","1601302724493737"
+"Workstation","LanmanWorkstation","OK","Microsoft Corporation","Microsoft Windows Network","True","True","16","0","False","False","True","False","False","2020-09-28 18:18:50.968372","1601302730968372"
