@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\ISSUE_TEMPLATE",
+    "\\bin",
+    "\\docs",
+    "\\flussi",
+    "\\log",
+    "\\requirements"
+  ],
+  "SelectedNode": "\\bin\\netinfo.py",
+  "PreviewInSolutionExplorer": false
+}

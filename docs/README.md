@@ -1,5 +1,5 @@
 # netinfo
-[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v02.01-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
+[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v03.01-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
 
 ## Tags
  #wmi, #automation, #python3, #network, #ping, #csv, #database, #datetime
@@ -21,6 +21,7 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
  - [x] Use append method
  - [x] Add date info
  - [x] Add unchecked_PC.csv file and unchecked_PC table for the PCs that i can't reach
+ - [x] Add folder variable
 
 ## Directories structure
  - .github
@@ -29,7 +30,7 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
      - feature-request.md
  - bin
    - **netinfo.py**
- - docs
+ - docs or doc
    - LICENSE
    - README.md
    - _config.yml
@@ -50,8 +51,13 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
  3. **python3 netinfo.py**
 
 # Changelog
+ - [Version_03.01_2020-10-15](#Version_0301_2020-10-15)
  - [Version_02.01_2020-9-28](#Version_0201_2020-9-28)
  - [Version_01.01_2020-9-21](#Version_0101_2020-9-21)
+
+## Version_03.01_2020-10-15
+ - Fixed some bugs
+ - Add folder variable
 
 ## Version_02.01_2020-9-21
  - Fixed some bugs

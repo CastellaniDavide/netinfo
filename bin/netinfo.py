@@ -1,26 +1,30 @@
 """netinfo
 """
 import os
+import sys
 import wmi
 import sqlite3
 from datetime import datetime
 
 __author__ = "help@castellanidavide.it"
-__version__ = "02.01 2020-09-28"
+__version__ = "03.01 2020-10-15"
 
 class netinfo:
-	def __init__ (self, debug=False, db=True):
-		"""Where it all begins
+	def __init__ (self, folder=None, debug=False, db=True, vs=False):
+		""" Where it all begins
 		"""
-		base_dir = "." if debug else ".." # the project "root" in Visual studio it is different
+		base_dir = "." if vs else ".." # the project "root" in Visual studio it is different
+
+		if folder == None:
+			folder = os.path.join(base_dir, "flussi")
 
 		log = open(os.path.join(base_dir, "log", "trace.log"), "a+")
-		csv_names = open(os.path.join(base_dir, "flussi", "computers.csv"), "r+")
-		csv_netinfo_history = open(os.path.join(base_dir, "flussi", "netinfo_history.csv"), "a+")
-		csv_netinfo = open(os.path.join(base_dir, "flussi", "netinfo.csv"), "w+")
-		csv_unchecked = open(os.path.join(base_dir, "flussi", "unchecked_PC.csv"), "r+").read()
-		csv_unchecked2 = open(os.path.join(base_dir, "flussi", "unchecked_PC.csv"), "w+")
-		if db : db_netinfo = sqlite3.connect(os.path.join(base_dir, "flussi", "netinfo.db"))
+		csv_names = open(os.path.join(folder, "computers.csv"), "r+")
+		csv_netinfo_history = open(os.path.join(folder, "netinfo_history.csv"), "a+")
+		csv_netinfo = open(os.path.join(folder, "netinfo.csv"), "w+")
+		csv_unchecked = open(os.path.join(folder, "unchecked_PC.csv"), "r+").read()
+		csv_unchecked2 = open(os.path.join(folder, "unchecked_PC.csv"), "w+")
+		if db : db_netinfo = sqlite3.connect(os.path.join(folder, "netinfo.db"))
 		
 		netinfo.log(log, f"Opened all files{' and database connected' if db else ' opened'}")
 		
@@ -29,7 +33,7 @@ class netinfo:
 		netinfo.log(log, "Running: netinfo.py")
 		
 		# Init files and database
-		intestation = "Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService,Date_local,Date_universal_microsecond"
+		intestation = "PCname,Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService,Date_local,Date_universal_microsecond"
 		intestation_unchecked = '"names","fail_reach","total_search"'
 		netinfo.init_csv(csv_netinfo, intestation, log)
 		csv_netinfo_history.seek(0)
@@ -64,7 +68,7 @@ class netinfo:
 
 				for network_client, network_protocol in zip(conn.Win32_NetworkClient(["Caption", "Description", "Status", "Manufacturer", "Name"]), conn.Win32_NetworkProtocol(["GuaranteesDelivery", "GuaranteesSequencing", "MaximumAddressSize", "MaximumMessageSize", "SupportsConnectData", "SupportsEncryption", "SupportsEncryption", "SupportsGracefulClosing", "SupportsGuaranteedBandwidth", "SupportsQualityofService"])):
 					netinfo.print_and_log(log, "   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol", debug)
-					data = f"'{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"
+					data = f"'{'localhost' if debug else PC_name}','{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"
 				
 					csv_netinfo.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
 					csv_netinfo_history.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
@@ -209,4 +213,18 @@ if __name__ == "__main__":
 	# database flag
 	db = True
 
-	netinfo(debug, db)
+	# Visual Studio flag
+	vs = True
+
+	# check if is launched by .bat file
+	if "--batch" in sys.argv or "-b" in sys.argv:
+		debug = False
+		vs = False
+
+	# select folder
+	folder = None
+	for arg in sys.argv:
+		if "--folder=" in arg or "-f=" in arg:
+			folder = arg.replace("--folder=", "").replace("-f=", "")
+
+	netinfo(folder, debug, db, vs)
