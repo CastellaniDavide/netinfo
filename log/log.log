@@ -1641,3 +1641,38 @@ Unchecked updated
 End time: 2020-10-15 15:55:29.486815
 Total time: 0:00:09.522005
 
+Opened all files and database connected
+Start time: 2020-10-15 21:30:17.926564
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-10-15 21:30:27.735432
+Total time: 0:00:09.808868
+
+Opened all files and database connected
+Start time: 2020-10-15 21:32:01.539705
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-10-15 21:32:11.271461
+Total time: 0:00:09.731756
+
+Opened all files and database connected
+Start time: 2020-10-15 21:34:13.233317
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-10-15 21:34:22.952626
+Total time: 0:00:09.719309
+

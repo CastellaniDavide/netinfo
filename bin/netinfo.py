@@ -33,7 +33,7 @@ class netinfo:
 		netinfo.log(log, "Running: netinfo.py")
 		
 		# Init files and database
-		intestation = "PCname,Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService,Date_local,Date_universal_microsecond"
+		intestation = "PCname,Caption,Description,Status,Manufacturer,Name,GuaranteesDelivery,GuaranteesSequencing,MaximumAddressSize,MaximumMessageSize,SupportsConnectData,SupportsEncryption,SupportsGracefulClosing,SupportsGuaranteedBandwidth,SupportsQualityofService,DNSDomain,DHCPEnabled,DefaultIPGateway,Date_local,Date_universal_microsecond"
 		intestation_unchecked = '"names","fail_reach","total_search"'
 		netinfo.init_csv(csv_netinfo, intestation, log)
 		csv_netinfo_history.seek(0)
@@ -66,9 +66,9 @@ class netinfo:
 				conn = wmi.WMI("." if debug else PC_name)
 				netinfo.print_and_log(log, f" - {PC_name}", debug)
 
-				for network_client, network_protocol in zip(conn.Win32_NetworkClient(["Caption", "Description", "Status", "Manufacturer", "Name"]), conn.Win32_NetworkProtocol(["GuaranteesDelivery", "GuaranteesSequencing", "MaximumAddressSize", "MaximumMessageSize", "SupportsConnectData", "SupportsEncryption", "SupportsEncryption", "SupportsGracefulClosing", "SupportsGuaranteedBandwidth", "SupportsQualityofService"])):
+				for network_client, network_protocol, other in zip(conn.Win32_NetworkClient(["Caption", "Description", "Status", "Manufacturer", "Name"]), conn.Win32_NetworkProtocol(["GuaranteesDelivery", "GuaranteesSequencing", "MaximumAddressSize", "MaximumMessageSize", "SupportsConnectData", "SupportsEncryption", "SupportsEncryption", "SupportsGracefulClosing", "SupportsGuaranteedBandwidth", "SupportsQualityofService"]), conn.Win32_NetworkAdapterConfiguration(["DNSDomain", "DHCPEnabled", "DefaultIPGateway"])):
 					netinfo.print_and_log(log, "   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol", debug)
-					data = f"'{'localhost' if debug else PC_name}','{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"
+					data = f"'{'localhost' if debug else PC_name}','{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{other.DNSDomain}','{other.DHCPEnabled}','{other.DefaultIPGateway}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"
 				
 					csv_netinfo.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
 					csv_netinfo_history.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
