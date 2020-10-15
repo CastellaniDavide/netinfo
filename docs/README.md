@@ -1,5 +1,5 @@
 # netinfo
-[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v03.01-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
+[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v03.02-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
 
 ## Tags
  #wmi, #automation, #python3, #network, #ping, #csv, #database, #datetime
@@ -41,19 +41,23 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
    - netinfo_history.csv <- On first run
    - unchecked_PC.csv
  - log
-   - trace.log
+   - log.log
  - requirements
    - requirements.txt
    
 ### Execution examples
  1. update "computers.csv" file with our PC
- 2. (Clear "trace.log" file)
+ 2. (Clear "log.log" file)
  3. **python3 netinfo.py**
 
 # Changelog
+ - [Version_03.02_2020-10-15](#Version_0302_2020-10-15)
  - [Version_03.01_2020-10-15](#Version_0301_2020-10-15)
  - [Version_02.01_2020-9-28](#Version_0201_2020-9-28)
  - [Version_01.01_2020-9-21](#Version_0101_2020-9-21)
+
+## Version_03.02_2020-10-15
+ - trace.log -> log.log
 
 ## Version_03.01_2020-10-15
  - Fixed some bugs

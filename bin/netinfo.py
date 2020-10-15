@@ -18,7 +18,7 @@ class netinfo:
 		if folder == None:
 			folder = os.path.join(base_dir, "flussi")
 
-		log = open(os.path.join(base_dir, "log", "trace.log"), "a+")
+		log = open(os.path.join(base_dir, "log", "log.log"), "a+")
 		csv_names = open(os.path.join(folder, "computers.csv"), "r+")
 		csv_netinfo_history = open(os.path.join(folder, "netinfo_history.csv"), "a+")
 		csv_netinfo = open(os.path.join(folder, "netinfo.csv"), "w+")
