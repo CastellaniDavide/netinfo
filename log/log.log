@@ -1676,3 +1676,232 @@ Unchecked updated
 End time: 2020-10-15 21:34:22.952626
 Total time: 0:00:09.719309
 
+Opened all files and database connected
+Start time: 2020-11-09 09:27:58.444632
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 09:28:08.403096
+Total time: 0:00:09.958464
+
+Opened all files and database connected
+Start time: 2020-11-09 09:31:52.261824
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 09:31:57.320858
+Total time: 0:00:05.059034
+
+Opened all files and database connected
+Start time: 2020-11-09 09:32:57.897772
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 09:33:02.865902
+Total time: 0:00:04.968130
+
+Opened all files and database connected
+Start time: 2020-11-09 09:33:35.469545
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 09:33:40.316446
+Total time: 0:00:04.846901
+
+Opened all files opened
+Start time: 2020-11-09 09:35:57.460113
+Running: netinfo.py
+csv now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 09:36:02.050001
+Total time: 0:00:04.589888
+
+Opened all files and database connected
+Start time: 2020-11-09 09:37:32.626461
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 09:45:14.060213
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 09:48:39.757473
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 09:50:49.118840
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 15:45:42.036872
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 15:46:49.066741
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 15:47:33.447266
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 15:49:03.939998
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 15:49:08.618904
+Total time: 0:00:04.678906
+
+Opened all files and database connected
+Start time: 2020-11-09 15:49:42.584492
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 15:49:47.201072
+Total time: 0:00:04.616580
+
+Opened all files and database connected
+Start time: 2020-11-09 15:53:50.752194
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 15:53:55.496372
+Total time: 0:00:04.744178
+
+Opened all files and database connected
+Start time: 2020-11-09 15:59:57.535359
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 16:01:04.997929
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Opened all files and database connected
+Start time: 2020-11-09 16:02:24.916817
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - My PC, debug option
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:02:29.916562
+Total time: 0:00:04.999745
+
+Opened all files and database connected
+Start time: 2020-11-09 16:02:53.688586
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:03:03.444571
+Total time: 0:00:09.755985
+
+Opened all files and database connected
+Start time: 2020-11-09 16:05:42.112597
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:05:52.027938
+Total time: 0:00:09.915341
+
+Opened all files and database connected
+Start time: 2020-11-09 16:06:31.049958
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:06:40.790531
+Total time: 0:00:09.740573
+
+Opened all files and database connected
+Start time: 2020-11-09 16:10:44.610755
+Running: netinfo.py
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:10:54.600875
+Total time: 0:00:09.990120
+
+Opened all files and database connected
+Start time: 2020-11-09 16:21:40.698019
+Running: netinfo.py
+csv now initialized
+csv now initialized
+database now initialized
+ - localhost
+   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol
+Unchecked updated
+End time: 2020-11-09 16:21:50.515211
+Total time: 0:00:09.817192
+
