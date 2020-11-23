@@ -1,5 +1,5 @@
 # netinfo
-[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v04.01-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
+[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-netinfo/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v05.01-blue?style=flat) ![Language Python](https://img.shields.io/badge/language-Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Windows-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/netinfo)
 
 ## Tags
  #wmi, #automation, #python3, #network, #ping, #csv, #database, #datetime
@@ -23,6 +23,7 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
  - [x] Add unchecked_PC.csv file and unchecked_PC table for the PCs that i can't reach
  - [x] Add folder variable
  - [x] Add Vendom info
+ - [x] Normalize MACAddress
 
 ## Directories structure
  - .github
@@ -37,7 +38,7 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
    - _config.yml
  - flussi
    - computers.csv
-   - netinfo.csv
+   - netinfo.csv <- On first run
    - netinfo.db (optional) <- On first run
    - netinfo_history.csv <- On first run
    - unchecked_PC.csv
@@ -52,12 +53,16 @@ Get net infos in all computers in "computers.csv" file & in "computers.db" datab
  3. **python3 netinfo.py**
 
 # Changelog
- - [Version_04.01-2020-11-09](#Version_04.01-2020-11-09)
+ - [Version_05.01-2020-11-23](#Version_0501-2020-11-23)
+ - [Version_04.01-2020-11-09](#Version_0401-2020-11-09)
  - [Version_03.03_2020-10-15](#Version_0303_2020-10-15)
  - [Version_03.02_2020-10-15](#Version_0302_2020-10-15)
  - [Version_03.01_2020-10-15](#Version_0301_2020-10-15)
  - [Version_02.01_2020-09-28](#Version_0201_2020-09-28)
  - [Version_01.01_2020-09-21](#Version_0101_2020-09-21)
+
+## Version_05.01-2020-11-23
+ - Normalize MACAddress
 
 ## Version_04.01-2020-11-09
  - Fixed a bug
