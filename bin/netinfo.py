@@ -9,7 +9,7 @@ from ipaddress import ip_address, IPv4Address
 import requests
 
 __author__ = "help@castellanidavide.it"
-__version__ = "03.01 2020-10-15"
+__version__ = "05.01 2020-11-23"
 
 class netinfo:
 	def __init__ (self, folder=None, debug=False, db=True, vs=False):
