@@ -70,13 +70,16 @@ class netinfo:
 
 				for network_client, network_protocol, other in zip(conn.Win32_NetworkClient(["Caption", "Description", "Status", "Manufacturer", "Name"]), conn.Win32_NetworkProtocol(["GuaranteesDelivery", "GuaranteesSequencing", "MaximumAddressSize", "MaximumMessageSize", "SupportsConnectData", "SupportsEncryption", "SupportsEncryption", "SupportsGracefulClosing", "SupportsGuaranteedBandwidth", "SupportsQualityofService"]), conn.Win32_NetworkAdapterConfiguration(["DNSDomain", "DHCPEnabled", "DefaultIPGateway", "MACAddress"], IPEnabled=True)):
 					netinfo.print_and_log(log, "   - Istructions: Win32_NetworkClient && Win32_NetworkProtocol", debug)
-					for i in range(len(other.DefaultIPGateway)):
-						data = f"""'{'localhost' if debug else PC_name}','{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{other.DNSDomain}','{other.DHCPEnabled}','{"IPv4" if type(ip_address(other.DefaultIPGateway[i])) is IPv4Address else "IPv6"}','{other.DefaultIPGateway[i] if type(ip_address(other.DefaultIPGateway[i])) is IPv4Address else netinfo.MACnormalization(other.DefaultIPGateway[i], MACsep)}','{netinfo.MACnormalization(other.MACAddress, MACsep)}','{requests.get(f"http://macvendors.co/api/{other.MACAddress}").json()['result']['company']}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"""
+					try:
+						for i in range(len(other.DefaultIPGateway)):
+							data = f"""'{'localhost' if debug else PC_name}','{network_client.Caption}','{network_client.Description}','{network_client.Status}','{network_client.Manufacturer}','{network_client.Name}','{network_protocol.GuaranteesDelivery}','{network_protocol.GuaranteesSequencing}','{network_protocol.MaximumAddressSize}','{network_protocol.MaximumMessageSize}','{network_protocol.SupportsConnectData}','{network_protocol.SupportsEncryption}','{network_protocol.SupportsGracefulClosing}','{network_protocol.SupportsGuaranteedBandwidth}','{network_protocol.SupportsQualityofService}','{other.DNSDomain}','{other.DHCPEnabled}','{"IPv4" if type(ip_address(other.DefaultIPGateway[i])) is IPv4Address else "IPv6"}','{other.DefaultIPGateway[i] if type(ip_address(other.DefaultIPGateway[i])) is IPv4Address else netinfo.MACnormalization(other.DefaultIPGateway[i], MACsep)}','{netinfo.MACnormalization(other.MACAddress, MACsep)}','{requests.get(f"http://macvendors.co/api/{other.MACAddress}").json()['result']['company']}','{datetime.now()}','{int(datetime.utcnow().timestamp() * 10 ** 6)}'"""
 				
-						csv_netinfo.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
-						csv_netinfo_history.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
-						if db : db_netinfo.execute(f"INSERT INTO netinfo VALUES ({data})")
-						if db : db_netinfo.execute(f"INSERT INTO netinfo_history VALUES ({data})")
+							csv_netinfo.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
+							csv_netinfo_history.write(f"""{netinfo.make_csv_standart(data).replace("'", '"')}\n""")
+							if db : db_netinfo.execute(f"INSERT INTO netinfo VALUES ({data})")
+							if db : db_netinfo.execute(f"INSERT INTO netinfo_history VALUES ({data})")
+					except:
+						pass
 			else:
 				fail.append(PC_name)
 
